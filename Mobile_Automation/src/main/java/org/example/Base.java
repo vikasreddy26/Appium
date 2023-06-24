@@ -3,6 +3,7 @@ package org.example;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.remote.AndroidMobileCapabilityType;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
 import io.appium.java_client.service.local.flags.GeneralServerFlag;
@@ -14,6 +15,7 @@ import java.io.File;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
+
 /**
  * Hello world!
  */
@@ -24,7 +26,7 @@ public class Base {
     private URL startServer() {
         String nodePath = "C:\\Program Files\\nodejs\\node.exe";
 
-        String appiumMainJSPath = "C:\\Users\\Pinky\\AppData\\Roaming\\npm\\node_modules\\appium\\build\\lib\\main.js";
+        String appiumMainJSPath = "C:\\Users\\91809\\AppData\\Roaming\\npm\\node_modules\\appium\\build\\lib\\main.js";
         AppiumServiceBuilder builder = new AppiumServiceBuilder()
                 .withIPAddress("127.0.0.1")
                 .usingAnyFreePort()
@@ -45,7 +47,7 @@ public class Base {
         return service.getUrl();
     }
 
-    @BeforeTest
+ //   @BeforeTest
     public void setDriver() {
         startServer();
         DesiredCapabilities caps = new DesiredCapabilities();
@@ -58,8 +60,10 @@ public class Base {
         caps.setCapability("automationName", "UiAutomator2");
         caps.setCapability("unlockType", "pin");
         caps.setCapability("unlockKey", "222696");
+        caps.setCapability("autoGrantPermissions", true);
+
         driver = new AndroidDriver<MobileElement>(startServer(), caps);
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
     }
 
     public static AppiumDriver<MobileElement> getDriver() {

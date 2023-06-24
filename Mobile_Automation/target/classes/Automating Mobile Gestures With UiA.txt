@@ -126,3 +126,18 @@ boolean canScrollMore = (Boolean) ((JavascriptExecutor) driver).executeScript("m
     "direction", "down",
     "percent", 3.0
 ));
+
+
+MobileDriver(I) extends WebDriver (I)
+
+DefaultGenericMobileDriver(abstract class) extends RemoteWebDriver implements MobileDriver<T> (I)
+
+AppiumDriver (C)   extends  DefaultGenericMobileDriver(C)
+                 |
+AndroidDivrt(C) ,  IOSDriver(C)
+
+RemoteWebElement(C) implements WebElement(I)
+DefaultGenericMobileElement extends RemoteWebElement
+MobileElement(abstract class ) extends DefaultGenericMobileElement
+AndroidElement extends MobileElement
+IOSElement extends MobileElement
