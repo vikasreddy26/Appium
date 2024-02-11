@@ -1,6 +1,8 @@
 Automating Mobile Gestures With UiAutomator2 Backend
 Touch actions are the most advanced and the most complicated way to implement any Android gesture. Although, there is a couple of basic gestures, like swipe, fling or pinch, which are commonly used in Android applications and for which it makes sense to have shortcuts, where only high-level options are configurable.
 
+Gi to apk file directory and use adb.exe install ApiDemo.apk for installing apk file in device. 
+
 mobile: longClickGesture
 This gesture performs long click action on the given element/coordinates. Available since Appium v1.19
 
