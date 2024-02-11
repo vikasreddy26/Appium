@@ -127,7 +127,7 @@ boolean canScrollMore = (Boolean) ((JavascriptExecutor) driver).executeScript("m
     "percent", 3.0
 ));
 
-
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
 MobileDriver(I) extends WebDriver (I)
 
 DefaultGenericMobileDriver(abstract class) extends RemoteWebDriver implements MobileDriver<T> (I)
@@ -141,3 +141,97 @@ DefaultGenericMobileElement extends RemoteWebElement
 MobileElement(abstract class ) extends DefaultGenericMobileElement
 AndroidElement extends MobileElement
 IOSElement extends MobileElement
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+1. How to install appium with node.js
+2. How to install appium with with Appium Desktop Client
+3. How to check installation & dependencies (appium-doctor)
+4. How to uninstall appium
+
+Installing appium with Node.js
+
+Step 1 : Check if node.js is installed on your system    node --version    npm --version
+
+Step 2 : Download node.js installer    https://nodejs.org/en/download/
+
+Step 3 : Run the installer & install node.js & npm
+
+Step 4 : Check if node.js & npm are installed
+    node --version    npm --version
+    where node
+    where npm
+
+Step 5 : Install appium with node.js
+    npm install -g appium
+
+Step 6 : Check if appium is installed
+    appium -v
+    where appium
+
+Step 7 : Start appium
+    appium
+
+Installing appium with APPIUM DESKTOP CLIENT
+
+Step 1 : Download appium desktop client
+   http://appium.io/
+   https://github.com/appium/appium-desk...
+
+Step 2 : Install appium desktop client
+
+Step 3 : Start appium through appium desktop client
+
+To check appium installation & dependencies
+Install appium-doctor
+https://github.com/appium/appium-doctor
+npm install appium-doctor -g
+appium-doctor -h
+appium-doctor --android
+
+How to Uninstall appium
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+PREREQUISITES
+ - Java installed on system
+ - JAVA_HOME is set in environment variables
+ command to check : java -version
+ - An android mobile device
+ - Connecting cable
+ - 200 MB to 1 GB of free space
+
+ERRORS
+Error Description :
+error could not find or load main class com.android.sdklib.tool.sdkmanager.sdkmanagercli
+Solution:
+using 7zip to extract worked great. Windows zip manager must have an issue when extracting the files
+
+Error Description :
+Warning: Could not create settings
+java.lang.IllegalArgumentException
+        at com.android.sdklib.tool.sdkmanager.SdkManagerCliSettings.＜init＞   (SdkManagerCliSettings.java:428)
+        ...(and so on)
+
+Solution:
+create folder "cmdline-tools" inside 
+"android-sdk" folder and cut-paste the "tools" foder into "cmdline-tools" folder. Here is how they relate to each other:
+...\android-sdk\cmdline-tools\tools\...
+
+Step 1 : Download SDK tools
+ https://developer.android.com/studio
+----------------------------------------------------------------------------------
+Step 2 : Unzip folder & Extract platform tools
+----------------------------------------------------------------------------------
+Step 3 : Set environment variables
+ ANDROID_HOME = location of sdk folder
+ Path : append path of platform_tools folder
+----------------------------------------------------------------------------------
+Step 4 : Check command adb devices on command line
+----------------------------------------------------------------------------------
+Step 5 : Make device ready
+ - enable developer mode
+ - make USB Debugging on
+----------------------------------------------------------------------------------
+Step 6 : Connect device to computer system thorugh USB cable
+ - if asked enable USB Debbugging
+----------------------------------------------------------------------------------
+Step 7 : Run command adb devices
+  adb = android debug bridge
+ Check your device id displayed
